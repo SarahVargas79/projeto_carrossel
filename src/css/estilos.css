@@ -1,0 +1,123 @@
+body {
+    font-family: "Exo 2", sans-serif;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.carrossel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.informacoes {
+    display: none;
+}
+
+.informacoes.ativa {
+    display: block;
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /*??*/
+    min-height: 100vh;
+}
+
+.informacoes h1 {
+    font-family: "Shantell Sans";
+    font-size: 35px;
+    color: #fff;
+    letter-spacing: 8px;
+    margin-bottom: 80px;
+}
+
+@font-face {
+    font-family: "Shantell Sans";
+    src: url(../fontes/ShantellSans-Medium.ttf);
+}
+
+.informacoes .descricao {
+    width: 49%;
+    height: 300px;
+    overflow: auto;
+    padding-right: 15px;
+    font-size: 22px;
+    color: #fff;
+    line-height: 40px;
+}
+
+html ::-webkit-scrollbar {
+    width: 10px;
+}
+
+html ::-webkit-scrollbar-thumb {
+
+    background: #ffffff2f;
+}
+
+html ::-webkit-scrollbar-track {
+    background: #580058c4;
+}
+
+.botoes-carrossel {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.botoes-carrossel .botao {
+    background-color: #fff;
+    width: 15px;
+    height: 15px;
+    border-radius: 30%;
+    border: 1px solid transparent;
+    cursor: pointer;
+    border-color: #fff;
+}
+
+.botoes-carrossel .botao.selecionado {
+    background-color: rgb(20, 220, 127);
+}
+
+.botoes-carrossel .botao:hover {
+    box-shadow: 1px 0.5px 4px 4px rgba(107, 107, 107, 0.5);
+}
+
+.imagem {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    /*Não destorce a imagem*/
+    display: none;
+}
+
+.imagem.ativa {
+    display: block;
+    animation: mudarImagem 0.7s;
+}
+
+@keyframes mudarImagem {
+    from {
+        opacity: 0.85;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+main:after {
+    content: "";
+    min-height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(120deg, rgb(22, 0, 27) 10%, rgba(42, 0, 48, 0.059) 50%, rgb(0, 0, 0) 90%);
+    z-index: -1;
+}
